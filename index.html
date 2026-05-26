@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JMUN 2026, a Model United Nations conference hosted at St. Joseph Secondary School in Mississauga."
+    />
+    <title>JMUN 2026 | St. Joseph Secondary School</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header navbar navbar-expand-lg">
+      <div class="container-fluid px-0">
+        <a class="brand navbar-brand" href="index.html" aria-label="JMUN 2026 home">
+          <img src="JMUN.JPG" alt="JMUN 2026 logo" />
+          <span>JMUN 2026</span>
+        </a>
+
+        <button
+          class="nav-toggle navbar-toggler"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav collapse navbar-collapse" id="primaryNav" aria-label="Primary navigation">
+          <div class="navbar-nav ms-auto align-items-lg-center">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="committees.html">Committees</a>
+            <a class="nav-link" href="schedule.html">Itinerary</a>
+            <a class="nav-link" href="location.html">Location</a>
+            <a class="nav-link nav-cta" href="register.html">Register</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-inner container-xxl">
+          <div class="row align-items-center gy-5">
+          <div class="hero-copy col-lg-7">
+            <p class="eyebrow">St. Joseph Secondary School presents</p>
+            <h1 id="hero-title">JMUN 2026</h1>
+            <p class="hero-lede">
+              A student-led Model United Nations conference in Mississauga for delegates ready to debate,
+              negotiate, and lead with purpose.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="register.html">Registration details</a>
+              <a class="button button-secondary" href="committees.html">Explore committees</a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="hero-logo-panel" aria-label="JMUN 2026 event mark">
+              <img src="JMUN.JPG" alt="St. Joseph JMUN 2026 logo" />
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-strip container" aria-label="Conference highlights">
+        <div class="row g-0">
+        <div class="col-md-4">
+          <strong>2026</strong>
+          <span>Conference year</span>
+        </div>
+        <div class="col-md-4">
+          <strong>Mississauga</strong>
+          <span>City of</span>
+        </div>
+        <div class="col-md-4">
+          <strong>St. Joseph SS</strong>
+          <span>5555 Creditview Road</span>
+        </div>
+        </div>
+      </section>
+
+      <section class="section section-intro container-xxl" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About the conference</p>
+          <h2>Built for thoughtful debate and confident first steps.</h2>
+        </div>
+        <div class="intro-grid row g-4">
+          <p class="col-md-6">
+            JMUN 2026 brings students together to explore global issues through research, diplomacy, and
+            collaboration. Delegates will represent countries, form blocs, draft resolutions, and practice the
+            kind of public speaking that stays useful long after committee closes.
+          </p>
+          <p class="col-md-6">
+            The conference is designed to feel welcoming for newer delegates while still giving experienced
+            students meaningful room to challenge themselves in committee.
+          </p>
+        </div>
+      </section>
+
+      <section class="section committee-showcase container-xxl" id="committees" aria-labelledby="committee-slider-title">
+        <div class="section-heading">
+          <p class="eyebrow">Committee program</p>
+          <h2 id="committee-slider-title">JMUN 2026 committee lineup.</h2>
+        </div>
+        <div class="committee-slider" data-committee-slider>
+          <div class="committee-slide is-active">
+            <span class="card-kicker">General Assembly</span>
+            <h3>SOCHUM</h3>
+            <p>Human rights, cultural preservation, and the balance between universal standards and national realities.</p>
+            <a class="card-link" href="committees/sochum.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">General Assembly</span>
+            <h3>UN Security Council</h3>
+            <p>International peace and security, nuclear stability, and protection of civilians in armed conflict.</p>
+            <a class="card-link" href="committees/security-council.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">Specialized</span>
+            <h3>World Health Organization</h3>
+            <p>Global outbreaks, pandemics, and vector control in extreme and remote environments.</p>
+            <a class="card-link" href="committees/who.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">Specialized</span>
+            <h3>INTERPOL</h3>
+            <p>Counterfeit medical goods, cross-border policing, and political misuse of the Red Notice system.</p>
+            <a class="card-link" href="committees/interpol.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">Specialized</span>
+            <h3>Meta Board of Directors</h3>
+            <p>Data collection, content moderation, free speech, and mental health protection on social media.</p>
+            <a class="card-link" href="committees/meta-board.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">Specialized</span>
+            <h3>International Sports Council</h3>
+            <p>Global expansion, broadcast scheduling, and cross-league player movement and transfer rights.</p>
+            <a class="card-link" href="committees/international-sports-council.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">Crisis</span>
+            <h3>ADHOC</h3>
+            <p>A secretive, fast-paced Miraculous-themed crisis committee revealed on conference day.</p>
+            <a class="card-link" href="committees/adhoc.html">View committee</a>
+          </div>
+          <div class="committee-slide">
+            <span class="card-kicker">Crisis</span>
+            <h3>The Bee Movie</h3>
+            <p>Bee labour laws, regulation of the honey industry, and human aggression toward bees.</p>
+            <a class="card-link" href="committees/bee-movie.html">View committee</a>
+          </div>
+          <div class="slider-controls" aria-label="Committee slider controls">
+            <button class="slider-button" type="button" data-slider-prev aria-label="Previous committee">Back</button>
+            <div class="slider-count" aria-live="polite"><span data-slider-current>1</span> / 8</div>
+            <button class="slider-button" type="button" data-slider-next aria-label="Next committee">Forward</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section schedule-band" id="schedule">
+        <div class="section-heading">
+          <p class="eyebrow">Conference Itinerary</p>
+          <h2>Conference Itinerary.</h2>
+        </div>
+        <div class="timeline" aria-label="Conference itinerary">
+          <div class="timeline-item">
+            <span>8:00-8:20</span>
+            <h3>Arrival and registration</h3>
+            <p>Delegates check in and receive conference materials.</p>
+          </div>
+          <div class="timeline-item">
+            <span>8:30-9:00</span>
+            <h3>Opening ceremonies</h3>
+            <p>The conference begins with welcome remarks and delegate orientation.</p>
+          </div>
+          <div class="timeline-item">
+            <span>9:00-10:20</span>
+            <h3>Committee Session 1</h3>
+            <p>Delegates begin formal debate and caucus work.</p>
+          </div>
+          <div class="timeline-item">
+            <span>10:20-10:30</span>
+            <h3>Break</h3>
+            <p>A short pause between committee sessions.</p>
+          </div>
+          <div class="timeline-item">
+            <span>10:30-11:40</span>
+            <h3>Committee Session 2</h3>
+            <p>Committees continue debate, collaboration, and drafting.</p>
+          </div>
+          <div class="timeline-item">
+            <span>11:40-12:20</span>
+            <h3>Lunch</h3>
+            <p>Delegates break before the final committee session.</p>
+          </div>
+          <div class="timeline-item">
+            <span>12:20-1:35</span>
+            <h3>Committee Session 3</h3>
+            <p>Final debate, voting, and committee wrap-up.</p>
+          </div>
+          <div class="timeline-item">
+            <span>1:40-2:20</span>
+            <h3>Closing ceremonies</h3>
+            <p>Awards and final remarks close JMUN 2026.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section venue-section container-xxl" id="location">
+        <div class="row align-items-center g-5">
+        <div class="venue-copy col-lg-7">
+          <p class="eyebrow">Location</p>
+          <h2>Hosted at St. Joseph Secondary School.</h2>
+          <p>
+            JMUN 2026 will take place at St. Joseph Secondary School, located at
+            <strong>5555 Creditview Road, Mississauga, Ontario</strong>.
+          </p>
+          <a class="button button-secondary" href="location.html">Open location page</a>
+        </div>
+        <div class="col-lg-5">
+        <div class="venue-card h-100" aria-label="Venue address">
+          <span>St. Joseph Secondary School</span>
+          <strong>5555 Creditview Road</strong>
+          <p>Mississauga, Ontario</p>
+        </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="registration container" id="register">
+        <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+          <p class="eyebrow">Registration</p>
+          <h2>Delegate and school registration details are coming soon.</h2>
+          <p>
+            Check back for conference date, fees, committee assignments, delegate resources, and registration
+            forms as JMUN 2026 approaches.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+        <a class="button button-primary" href="index.html#about">Prepare your delegation</a>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="JMUN.JPG" alt="" aria-hidden="true" />
+      <p>JMUN 2026 at St. Joseph Secondary School, Mississauga.</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
