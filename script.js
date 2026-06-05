@@ -25,6 +25,8 @@ if (slider) {
   const previous = slider.querySelector("[data-slider-prev]");
   const next = slider.querySelector("[data-slider-next]");
   let activeIndex = 0;
+  let isPaused = false;
+  let autoplay;
 
   const setSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;
@@ -36,22 +38,39 @@ if (slider) {
     }
   };
 
-  const syncToScroll = () => {
-    const section = slider.closest(".committee-showcase");
-    if (!section) {
-      return;
-    }
-
-    const rect = section.getBoundingClientRect();
-    const scrollRange = Math.max(section.offsetHeight - window.innerHeight, 1);
-    const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1);
-    setSlide(Math.round(progress * (slides.length - 1)));
+  const moveSlide = (step) => {
+    setSlide(activeIndex + step);
   };
 
-  previous?.addEventListener("click", () => setSlide(activeIndex - 1));
-  next?.addEventListener("click", () => setSlide(activeIndex + 1));
-  window.addEventListener("scroll", syncToScroll, { passive: true });
-  window.addEventListener("resize", syncToScroll);
+  const startAutoplay = () => {
+    window.clearInterval(autoplay);
+    autoplay = window.setInterval(() => {
+      if (!isPaused) {
+        moveSlide(1);
+      }
+    }, 2000);
+  };
+
+  previous?.addEventListener("click", () => {
+    moveSlide(-1);
+    startAutoplay();
+  });
+  next?.addEventListener("click", () => {
+    moveSlide(1);
+    startAutoplay();
+  });
+  slider.addEventListener("mouseenter", () => {
+    isPaused = true;
+  });
+  slider.addEventListener("mouseleave", () => {
+    isPaused = false;
+  });
+  slider.addEventListener("focusin", () => {
+    isPaused = true;
+  });
+  slider.addEventListener("focusout", () => {
+    isPaused = false;
+  });
   setSlide(0);
-  syncToScroll();
+  startAutoplay();
 }

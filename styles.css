@@ -380,12 +380,11 @@ h3 {
 }
 
 .committee-showcase {
-  min-height: 1500px;
+  min-height: auto;
 }
 
 .committee-slider {
-  position: sticky;
-  top: 106px;
+  position: relative;
   overflow: hidden;
   min-height: 430px;
   border: 1px solid var(--line);
@@ -402,7 +401,8 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(26px, 5vw, 58px);
+  align-items: flex-start;
+  padding: clamp(26px, 5vw, 58px) clamp(26px, 5vw, 58px) 112px;
   opacity: 0;
   transform: translateX(34px);
   transition:
@@ -428,6 +428,10 @@ h3 {
   max-width: 700px;
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.committee-slide .card-link {
+  align-self: center;
 }
 
 .slider-controls {
@@ -518,6 +522,94 @@ h3 {
   background: var(--lavender-100);
   font-size: 0.88rem;
   font-weight: 800;
+}
+
+.secretariat-section {
+  padding-top: 40px;
+}
+
+.secretariat-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 16px 44px rgba(31, 18, 68, 0.08);
+}
+
+.secretariat-card img,
+.secretariat-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--lavender-100);
+}
+
+.secretariat-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  background:
+    linear-gradient(145deg, rgba(67, 32, 143, 0.95), rgba(22, 127, 143, 0.88)),
+    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 18px);
+  font-size: clamp(4rem, 11vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.secretariat-card > div:last-child {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+}
+
+.secretariat-card .card-kicker {
+  margin-bottom: 0;
+}
+
+.secretariat-card h3 {
+  margin: 0;
+}
+
+.advisor-card {
+  border-top: 5px solid var(--gold);
+}
+
+.letter-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.35fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 44px);
+  align-items: start;
+  padding: clamp(24px, 5vw, 44px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.letter-panel h2 {
+  margin-bottom: 0;
+}
+
+.letter-space {
+  min-height: 420px;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px dashed rgba(101, 64, 189, 0.45);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+    repeating-linear-gradient(0deg, transparent 0 35px, rgba(101, 64, 189, 0.14) 35px 36px);
+}
+
+.letter-placeholder {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .detail-layout {
@@ -835,15 +927,18 @@ h3 {
   }
 
   .committee-showcase {
-    min-height: 1300px;
+    min-height: auto;
   }
 
   .committee-slider {
-    top: 92px;
     min-height: 500px;
   }
 
   .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-panel {
     grid-template-columns: 1fr;
   }
 
