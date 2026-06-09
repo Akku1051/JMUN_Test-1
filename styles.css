@@ -528,6 +528,27 @@ h3 {
   padding-top: 40px;
 }
 
+.advisor-feature {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+}
+
+.advisor-copy {
+  max-width: 700px;
+}
+
+.advisor-copy h2 {
+  margin-bottom: 18px;
+}
+
+.advisor-copy p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
 .secretariat-card {
   display: flex;
   min-height: 100%;
@@ -542,7 +563,7 @@ h3 {
 .secretariat-card img,
 .secretariat-placeholder {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 320px;
   object-fit: cover;
   background: var(--lavender-100);
 }
@@ -935,6 +956,10 @@ h3 {
   }
 
   .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .advisor-feature {
     grid-template-columns: 1fr;
   }
 
