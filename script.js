@@ -1,6 +1,17 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 
+const finishLoading = () => {
+  document.body.classList.remove("is-loading");
+};
+
+if (document.readyState === "complete") {
+  window.setTimeout(finishLoading, 180);
+} else {
+  window.addEventListener("load", () => window.setTimeout(finishLoading, 180), { once: true });
+  window.setTimeout(finishLoading, 2500);
+}
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
