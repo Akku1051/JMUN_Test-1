@@ -66,6 +66,7 @@ body.is-loading .committee-list-card,
 body.is-loading .page-hero .container-xxl > *,
 body.is-loading .detail-panel,
 body.is-loading .detail-sidebar,
+body.is-loading .about-card,
 body.is-loading .secretariat-card,
 body.is-loading .advisor-copy > *,
 body.is-loading .letter-panel,
@@ -99,6 +100,7 @@ body.is-loading .committee-list-card *,
 body.is-loading .page-hero .container-xxl > * *,
 body.is-loading .detail-panel *,
 body.is-loading .detail-sidebar *,
+body.is-loading .about-card *,
 body.is-loading .secretariat-card *,
 body.is-loading .advisor-copy > * *,
 body.is-loading .letter-panel *,
@@ -162,8 +164,12 @@ body.is-loading iframe {
   gap: 22px;
 }
 
-.site-nav a {
+.site-nav a,
+.nav-dropdown {
   position: relative;
+}
+
+.site-nav a {
   padding: 0;
 }
 
@@ -183,6 +189,82 @@ body.is-loading iframe {
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after {
   transform: scaleX(1);
+}
+
+.nav-dropdown {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-dropdown-toggle::before {
+  width: 0;
+  height: 0;
+  border-top: 5px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+  order: 2;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  z-index: 30;
+  display: grid;
+  min-width: 210px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  pointer-events: none;
+}
+
+.nav-dropdown::after {
+  position: absolute;
+  top: 100%;
+  right: -12px;
+  left: -12px;
+  height: 22px;
+  content: "";
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #413954;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible,
+.nav-dropdown-menu a[aria-current="page"] {
+  color: var(--purple-900);
+  background: var(--lavender-100);
+}
+
+.nav-dropdown-menu a::after {
+  display: none;
 }
 
 .nav-cta {
@@ -318,6 +400,12 @@ h1 {
 }
 
 .venue-copy .button-secondary {
+  color: var(--purple-900);
+  border-color: var(--line);
+  background: var(--white);
+}
+
+.about-feature .button-secondary {
   color: var(--purple-900);
   border-color: var(--line);
   background: var(--white);
@@ -598,6 +686,25 @@ h3 {
   font-weight: 800;
 }
 
+.about-card {
+  min-height: 100%;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--purple-650);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 16px 44px rgba(31, 18, 68, 0.08);
+}
+
+.about-card p,
+.about-feature p {
+  color: var(--muted);
+}
+
+.about-card .card-kicker {
+  margin-bottom: 22px;
+}
+
 .secretariat-section {
   padding-top: 40px;
 }
@@ -691,10 +798,19 @@ h3 {
   margin-bottom: 0;
 }
 
+.invitation-panel {
+  display: block;
+}
+
+.invitation-panel > div {
+  max-width: 920px;
+  margin-bottom: 28px;
+}
+
 .letter-space {
   min-height: 420px;
   padding: clamp(22px, 4vw, 38px);
-  border: 1px dashed rgba(101, 64, 189, 0.45);
+  border: 1px solid rgba(101, 64, 189, 0.22);
   border-radius: 8px;
   background:
     linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
@@ -705,6 +821,26 @@ h3 {
   margin: 0;
   color: var(--muted);
   font-weight: 700;
+}
+
+.invitation-letter {
+  width: 100%;
+  color: #393445;
+  font-size: 1.02rem;
+}
+
+.invitation-letter p {
+  margin-bottom: 18px;
+}
+
+.signature-image {
+  width: min(240px, 62vw);
+  margin: 4px 0 12px;
+}
+
+.letter-signoff {
+  margin-bottom: 0;
+  color: var(--purple-950);
 }
 
 .detail-layout {
@@ -970,7 +1106,7 @@ h3 {
   font-weight: 700;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 991.98px) {
   .nav-toggle {
     display: inline-block;
   }
@@ -1006,6 +1142,32 @@ h3 {
     width: 100%;
     padding: 14px;
     text-align: left;
+  }
+
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-dropdown::after {
+    display: none;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 8px 14px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 10px 14px;
+    white-space: normal;
   }
 
   .nav-cta {
