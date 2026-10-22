@@ -1050,6 +1050,42 @@ h3 {
   margin-top: auto;
 }
 
+.registration-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  width: 100%;
+}
+
+.registration-action .button {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.registration-label {
+  display: block;
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  color: var(--purple-950);
+}
+
+.registration-url {
+  word-break: break-all;
+  color: var(--purple-650);
+  text-decoration: underline;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 150ms ease;
+}
+
+.registration-url:hover,
+.registration-url:focus-visible {
+  color: var(--purple-900);
+}
+
 .position-paper-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
